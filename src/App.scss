@@ -142,6 +142,56 @@ $generic-bg: #db4c3f;
     background-color: #282828;
     border-color: transparent;
   }
+  .sidebar  {
+    background-color: #3C3F41;
+    color: #cacaca;
+  }
+  .tasks {
+    background-color:#2B2B2B;
+    color: #cacaca;
+  }
+  & {
+    background-color: #2B2B2B;
+  }
+  .add-task__text,
+  .add-task__main,
+  .add-task__cancel-x,
+  .add-task__shallow,
+  .add-project,
+  .add-project__text
+  {
+    color: white;
+
+  }
+
+  svg {
+    fill: #CB602D;
+  }
+
+   .add-task__plus,
+   .add-project__plus,
+   .add
+   {
+     color: #CB602D;
+   }
+
+  button {
+    color: #CB602D;
+  }
+
+  h2,
+  span
+   {
+    color: ghostwhite!important;
+  }
+  .settings__add,
+  li {
+    fill: #CB602D!important;
+  }
+
+
+
+
 }
 
 /* Header
