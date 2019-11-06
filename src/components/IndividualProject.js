@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {FaTrashAlt} from "react-icons/all";
-import { useProjectsValue, useSelectedProjectValue } from "../context";
+import {useProjectsValue, useSelectedProjectValue} from "../context";
 import {firebase} from "../firebase";
 
 export const IndividualProject = ({project}) => {
@@ -25,17 +25,17 @@ export const IndividualProject = ({project}) => {
             <span className="sidebar__project-name">{project.name}</span>
             <span
                 className="sidebar__project-delete"
-                  data-testid="delete-project"
-                    onClick={() => setShowConfirm(!showConfirm)}
+                data-testid="delete-project"
+                onClick={() => setShowConfirm(!showConfirm)}
             >
-            <FaTrashAlt />
+            <FaTrashAlt/>
                 {showConfirm && (
                     <div className="project-delete-modal">
                         <div className="project-delete-modal__inner">
                             <p>Are you sure you want to delete this project?</p>
                             <button
-                            type="button"
-                            onClick={() => deleteProject(project.docId)}
+                                type="button"
+                                onClick={() => deleteProject(project.docId)}
                             >
                                 Delete
                             </button>

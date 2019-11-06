@@ -1,9 +1,9 @@
 import React from 'react';
 import moment from 'moment';
-import { FaSpaceShuttle, FaSun, FaRegPaperPlane } from 'react-icons/fa';
+import {FaSpaceShuttle, FaSun, FaRegPaperPlane} from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
-export const TaskDate = ({ setTaskDate, showTaskDate, setShowTaskDate }) =>
+export const TaskDate = ({setTaskDate, showTaskDate, setShowTaskDate}) =>
     showTaskDate && (
         <div className="task-date" data-testid="task-date-overlay">
             <ul className="task-date__list">
@@ -23,7 +23,7 @@ export const TaskDate = ({ setTaskDate, showTaskDate, setShowTaskDate }) =>
                         role="button"
                     >
             <span>
-              <FaSpaceShuttle />
+              <FaSpaceShuttle/>
             </span>
                         <span>Today</span>
                     </div>
@@ -52,7 +52,7 @@ export const TaskDate = ({ setTaskDate, showTaskDate, setShowTaskDate }) =>
                         aria-label="Select tomorrow as the task date"
                     >
             <span>
-              <FaSun />
+              <FaSun/>
             </span>
                         <span>Tomorrow</span>
                     </div>
@@ -81,7 +81,7 @@ export const TaskDate = ({ setTaskDate, showTaskDate, setShowTaskDate }) =>
                         role="button"
                     >
             <span>
-              <FaRegPaperPlane />
+              <FaRegPaperPlane/>
             </span>
                         <span>Next week</span>
                     </div>

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { FaRegListAlt, FaRegCalendarAlt } from 'react-icons/fa';
+import React, {useState} from 'react';
+import {FaRegListAlt, FaRegCalendarAlt} from 'react-icons/fa';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import { firebase } from '../firebase';
-import { useSelectedProjectValue } from '../context';
-import { ProjectOverlay } from './ProjectOverlay';
-import { TaskDate } from './TaskDate';
+import {firebase} from '../firebase';
+import {useSelectedProjectValue} from '../context';
+import {ProjectOverlay} from './ProjectOverlay';
+import {TaskDate} from './TaskDate';
 
 export const AddTask = ({
                             showAddTaskMain = true,
@@ -20,7 +20,7 @@ export const AddTask = ({
     const [showProjectOverlay, setShowProjectOverlay] = useState(false);
     const [showTaskDate, setShowTaskDate] = useState(false);
 
-    const { selectedProject } = useSelectedProjectValue();
+    const {selectedProject} = useSelectedProjectValue();
 
     const addTask = () => {
         const projectId = project || selectedProject;
@@ -45,7 +45,7 @@ export const AddTask = ({
                     projectId,
                     task,
                     date: collatedDate || taskDate,
-                    userId: 'jlIFXIwyAL3tzHMtzRbw',
+                    userId: '1234',
                 })
                 .then(() => {
                     setTask('');
@@ -161,7 +161,7 @@ export const AddTask = ({
                         tabIndex={0}
                         role="button"
                     >
-            <FaRegListAlt />
+            <FaRegListAlt/>
           </span>
                     <span
                         className="add-task__date"
@@ -171,7 +171,7 @@ export const AddTask = ({
                         tabIndex={0}
                         role="button"
                     >
-            <FaRegCalendarAlt />
+            <FaRegCalendarAlt/>
           </span>
                 </div>
             )}

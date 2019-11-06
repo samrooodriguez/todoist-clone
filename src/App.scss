@@ -8,6 +8,7 @@ html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
@@ -137,29 +138,32 @@ $generic-bg: #db4c3f;
   ============================================ */
 .darkmode {
   header {
-    -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
-    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
     background-color: #282828;
     border-color: transparent;
   }
-  .sidebar  {
+
+  .sidebar {
     background-color: #3C3F41;
     color: #cacaca;
   }
+
   .tasks {
-    background-color:#2B2B2B;
+    background-color: #2B2B2B;
     color: #cacaca;
   }
+
   & {
     background-color: #2B2B2B;
   }
+
   .add-task__text,
   .add-task__main,
   .add-task__cancel-x,
   .add-task__shallow,
   .add-project,
-  .add-project__text
-  {
+  .add-project__text {
     color: white;
 
   }
@@ -168,28 +172,25 @@ $generic-bg: #db4c3f;
     fill: #CB602D;
   }
 
-   .add-task__plus,
-   .add-project__plus,
-   .add
-   {
-     color: #CB602D;
-   }
+  .add-task__plus,
+  .add-project__plus,
+  .add {
+    color: #CB602D;
+  }
 
   button {
     color: #CB602D;
   }
 
   h2,
-  span
-   {
-    color: ghostwhite!important;
+  span {
+    color: ghostwhite !important;
   }
+
   .settings__add,
   li {
-    fill: #CB602D!important;
+    fill: #CB602D !important;
   }
-
-
 
 
 }
@@ -262,7 +263,7 @@ header {
 
           &:hover {
             border-radius: 3px;
-            background-color: rgba(255,255,255,0.2);
+            background-color: rgba(255, 255, 255, 0.2);
           }
 
           &.settings__add {
@@ -358,21 +359,25 @@ header {
         color: #6accbc;
       }
     }
+
     &:nth-child(2) {
       .sidebar__dot {
         color: #fad003;
       }
     }
+
     &:nth-child(3) {
       .sidebar__dot {
         color: #ff8d85;
       }
     }
+
     &:nth-child(4) {
       .sidebar__dot {
         color: #ff9932;
       }
     }
+
     &:nth-child(5) {
       .sidebar__dot {
         color: #af38eb;
@@ -492,6 +497,7 @@ header {
     button {
       @include btn('50px');
     }
+
     span {
       @include cancel();
       font-weight: normal;
@@ -583,7 +589,7 @@ header {
   ============================================ */
 .add-task {
   &__overlay {
-    background: rgba(102,102,102,0.5);
+    background: rgba(102, 102, 102, 0.5);
     position: absolute;
     margin: auto;
     top: 0;

@@ -7,8 +7,6 @@ export const Header = ({darkMode, setDarkMode}) => {
     const [showQuickAddTask, setShowQuickAddTask] = useState(false);
 
 
-
-
     return <header className="header" data-testid="header">
         <nav>
             <div className="logo">
@@ -24,13 +22,14 @@ export const Header = ({darkMode, setDarkMode}) => {
                             setShowQuickAddTask(true);
                             setShouldShowMain(true);
                         }}
-                    >+</li>
+                    >+
+                    </li>
                     <li
                         data-testid="dark-mode-action"
                         className="settings__darkmode"
                         onClick={() => setDarkMode(!darkMode)}
                     >
-                        <FaPizzaSlice/> </li>
+                        <FaPizzaSlice/></li>
                 </ul>
             </div>
         </nav>
@@ -39,6 +38,6 @@ export const Header = ({darkMode, setDarkMode}) => {
             shouldShowMain={shouldShowMain}
             showQuickAddTask={showQuickAddTask}
             setShowQuickAddTask={setShowQuickAddTask}
-            />
+        />
     </header>;
 };

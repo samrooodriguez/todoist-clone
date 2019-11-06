@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import { firebase } from "../firebase";
-import { generatePushId } from "../helpers";
-import { useProjectsValue } from "../context";
+import {firebase} from "../firebase";
+import {generatePushId} from "../helpers";
+import {useProjectsValue} from "../context";
 
 export const AddProject = ({shouldShow = false}) => {
     const [show, setShow] = useState(shouldShow);
@@ -26,8 +26,8 @@ export const AddProject = ({shouldShow = false}) => {
                 setShow(false);
             });
 
-    return(
-        <div className='add-project' data-testid = "add-project">
+    return (
+        <div className='add-project' data-testid="add-project">
             {show && (
                 <div className="add-project__input">
                     <input
@@ -37,31 +37,31 @@ export const AddProject = ({shouldShow = false}) => {
                         data-testid="project-name"
                         type="text"
                         placeholder="Name your project"
-                        />
-                        <button
-                            className="add-project__submit"
-                            type="button"
-                            onClick={() => addProject()}
-                            data-testid="add-project-submit"
-                            >
-                            Add Project
-                        </button>
+                    />
+                    <button
+                        className="add-project__submit"
+                        type="button"
+                        onClick={() => addProject()}
+                        data-testid="add-project-submit"
+                    >
+                        Add Project
+                    </button>
                     <span
                         data-testid="hide-project-overlay"
                         className="add-project__cancel"
                         onClick={() => setShow(false)}
-                        >
+                    >
                         Cancel
                     </span>
                 </div>
             )}
-                <span className="add-project__plus">+</span>
-                <span
+            <span className="add-project__plus">+</span>
+            <span
                 data-testid="add-project-action"
                 className="add-project__text"
                 onClick={() => setShow(!show)}>
                 Add Project
                 </span>
         </div>
-        );
-    };
+    );
+};
