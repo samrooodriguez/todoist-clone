@@ -1,4 +1,4 @@
-import { collatedTasks } from '../constants';
+import {collatedTasks} from '../constants';
 
 export const getTitle = (projects, projectId) =>
     projects.find(project => project.projectId === projectId);
@@ -15,7 +15,7 @@ export const generatePushId = (() => {
 
     const lastRandChars = [];
 
-    return function() {
+    return function () {
         let now = new Date().getTime();
 
         const timeStampChars = new Array(8);
