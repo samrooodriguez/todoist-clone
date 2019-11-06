@@ -1,12 +1,13 @@
-import React, {useState} from 'react';
-import {FaTrashAlt} from "react-icons/all";
-import {useProjectsValue, useSelectedProjectValue} from "../context";
-import {firebase} from "../firebase";
+import React, { useState } from 'react';
+import { FaTrashAlt } from 'react-icons/fa';
+import PropTypes from 'prop-types';
+import { useProjectsValue, useSelectedProjectValue } from '../context';
+import { firebase } from '../firebase';
 
-export const IndividualProject = ({project}) => {
-    const [showConfirm, setShowConfirm] = useState();
-    const {projects, setProjects} = useProjectsValue();
-    const {setSelectedProject} = useSelectedProjectValue();
+export const IndividualProject = ({ project }) => {
+    const [showConfirm, setShowConfirm] = useState(false);
+    const { projects, setProjects } = useProjectsValue();
+    const { setSelectedProject } = useSelectedProjectValue();
 
     const deleteProject = docId => {
         firebase
@@ -19,6 +20,7 @@ export const IndividualProject = ({project}) => {
                 setSelectedProject('INBOX');
             });
     };
+
     return (
         <>
             <span className="sidebar__dot">•</span>
@@ -27,8 +29,12 @@ export const IndividualProject = ({project}) => {
                 className="sidebar__project-delete"
                 data-testid="delete-project"
                 onClick={() => setShowConfirm(!showConfirm)}
+                onKeyDown={() => setShowConfirm(!showConfirm)}
+                tabIndex={0}
+                role="button"
+                aria-label="Confirm deletion of project"
             >
-            <FaTrashAlt/>
+        <FaTrashAlt />
                 {showConfirm && (
                     <div className="project-delete-modal">
                         <div className="project-delete-modal__inner">
@@ -39,11 +45,23 @@ export const IndividualProject = ({project}) => {
                             >
                                 Delete
                             </button>
-                            <span onClick={() => setShowConfirm(!showConfirm)}>Cancel</span>
+                            <span
+                            onClick={() => setShowConfirm(!showConfirm)}
+                            onKeyDown={() => setShowConfirm(!showConfirm)}
+                            tabIndex={0}
+                            role="button"
+                            aria-label="Cancel adding project, do not delete"
+                        >
+                Cancel
+              </span>
                         </div>
                     </div>
                 )}
-            </span>
+      </span>
         </>
     );
+};
+
+IndividualProject.propTypes = {
+    project: PropTypes.object.isRequired,
 };
